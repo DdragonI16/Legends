@@ -11,6 +11,7 @@ public enum charge {
 
     CHARGE;
 
+    //TODO whole package needs cleanup
     public static double[] charge; {
         ArrayList<Double> charge = new ArrayList<>();
         charge.add(maximate_charge_bar.maximateCharge);
@@ -18,7 +19,6 @@ public enum charge {
         charge.add(stamina_bar.staminaCharge);
         charge.add(mana_bar.manaCharge);
         charge.add(player_health_bar.healthCharge);
-        charge.add(armor_bar.armorCharge);
     }
 
     public static double[] chargeSpeed() {
@@ -27,7 +27,6 @@ public enum charge {
         chargeSpeed()[2] = 5;
         chargeSpeed()[3] = 5;
         chargeSpeed()[4] = 4;
-        chargeSpeed()[5] = armor_bar.armorRepairCost;
         return charge;
     }
 
@@ -38,7 +37,6 @@ public enum charge {
         depletion.add(stamina_bar.staminaDepletion);
         depletion.add(mana_bar.manaDepletion);
         depletion.add(player_health_bar.healthDepletion);
-        depletion.add(armor_bar.armorDepletion);
     }
 
     public static double[] depletionSpeed() {
@@ -46,8 +44,7 @@ public enum charge {
         depletionSpeed()[1] = dragonChargeBossCounter();
         depletionSpeed()[2] = 3;
         depletionSpeed()[3] = 3;
-        depletionSpeed()[4] = enemyAttack / player_defense.healthTakenWithArmor;
-        depletionSpeed()[5] = armor_bar.armorDamage;
+        depletionSpeed()[4] = enemyAttack;
         return depletion;
     }
 
